@@ -1,0 +1,7 @@
+- if flash.any?
+  .ui.container
+    .ui.right.floated.blue.message
+      %i.close.icon
+      .header
+        - flash.each do |key, value|
+          = value

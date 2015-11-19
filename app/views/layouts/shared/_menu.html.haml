@@ -1,0 +1,21 @@
+.ui.sidebar.inverted.vertical.menu#sidebar
+  = link_to root_path, class: "item" do
+    %b Home
+  = link_to words_path, class: "item" do
+    %b Words
+  = link_to translated_path, class: "item" do
+    %b Translated
+  - if user_signed_in?
+    = link_to edit_user_registration_path, class: "item" do
+      %b= current_user.username
+    = link_to destroy_user_session_path, method: :delete, class: "item" do
+      %b Sign Out
+  - else
+    = link_to new_user_registration_path, class: "item" do
+      %b Sign Up
+    = link_to new_user_session_path, class: "item" do
+      %b Sign In
+.ui.black.big.launch.right.attached.fixed.button
+  %i.content.icon
+  %span
+    Menu

@@ -1,0 +1,4 @@
+$("#translate_content").val("<%= @translated["text"].first %>");
+<% if @word.present? %>
+  $("#space_translate_list_cards").prepend("<%=j render @word %>");
+<% end %>

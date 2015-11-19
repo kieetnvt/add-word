@@ -1,0 +1,16 @@
+.column
+  .ui.fluid.link.card{ class: card_label_helper(word) }
+    .content
+      .header
+        = best_in_place word, :title
+        .right.floated
+          = link_to word, method: :delete, data: { confirm: "Really want to erase it?" } do
+            %i.small.black.close.link.icon
+    .content
+      .ui
+        = best_in_place word, :content, as: :textarea
+    .extra.content
+      %span.right.floated
+        = display_time(word.created_at)
+      %span
+        %i.icon{ class: word_icon_helper(word) }

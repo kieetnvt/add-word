@@ -1,0 +1,9 @@
+= form_for word, remote: true do |f|
+  .ui.form
+    .fields
+      .seven.wide.field
+        = f.text_field :title, placeholder: "Type title of note word"
+      .seven.wide.field
+        = f.text_field :content, placeholder: "Type description of note word"
+      .field
+        = f.button "Submit", class: "ui teal button"

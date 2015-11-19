@@ -1,0 +1,9 @@
+%tr
+  %td= word.id
+  %td= word.title
+  %td= word.content
+  %td= word.user_id
+  %td= word.created_at
+  %td
+    = link_to "Edit" , edit_admin_word_path(word), class: "ui teal button"
+    = link_to "Delete", [:admin, word], method: :delete, data: { confirm: "Are you sure?" }, class: "ui red button"

@@ -1,0 +1,4 @@
+.row
+  %h3.ui.dividing.header
+    Edit #{@user.email}
+= render partial: "form", locals: { user: @user }

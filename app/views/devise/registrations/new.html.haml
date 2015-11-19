@@ -1,0 +1,29 @@
+.ui.grid.container.centered
+  .six.wide.computer.sixteen.wide.tablet.sixteen.wide.mobile.column
+    = render partial: "layouts/shared/notice" if notice.present?
+    = render partial: "layouts/shared/alert" if alert.present?
+    = render partial: "layouts/shared/form_error", locals: { object: resource }
+    = image_tag "logo.svg", class: "ui centered small image"
+    .ui.horizontal.divider
+      SIGN UP
+    .ui.huge.form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "ui large form"}) do |f|
+        .ui.stacked.segment
+          .field
+            .ui.left.icon.input
+              %i.user.icon
+              = f.email_field :email, autofocus: true, placeholder: "Email"
+          .field
+            .ui.left.icon.input
+              %i.user.icon
+              = f.password_field :password, autocomplete: "off", placeholder: "Password"
+          .field
+            .ui.left.icon.input
+              %i.user.icon
+              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password"
+          = f.submit "Sign up", class: "ui fluid large teal submit button"
+        .ui.section.divide
+    .ui.horizontal.divider
+      LOGIN BY FACEBOOK
+    = link_to user_omniauth_authorize_path(:facebook), class: "ui huge facebook fluid button" do 
+      Facebook

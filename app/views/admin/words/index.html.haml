@@ -1,0 +1,13 @@
+= render partial: "form", locals: { word: Word.new }
+.row
+  %table.ui.blue.table
+    %thead
+      %tr
+        %th Id
+        %th Title
+        %th Content
+        %th User
+        %th Date Time
+        %th Actions
+    %tbody
+      = render @words

@@ -1,0 +1,14 @@
+.doubling.stackable.two.column.ui.grid.container
+  .four.wide.column
+    = form_tag search_words_path, method: :get, enforce_utf8: false, class: "ui icon input" do
+      %input{ type: "text", name: "title", placeholder: "Search words", class: "promt" }
+      %i.search.ico
+  .ten.wide.column
+    = render partial: "words/form", locals: { word: Word.new }
+#words_space
+  .doubling.stackable.three.column.ui.grid.container#space_list_cards
+    = render partial: "words/word", collection: @words
+    - if @words.next_page
+      .ui.three.column.grid.container
+        .column.centered#paginate
+          = paginate @words

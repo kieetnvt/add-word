@@ -1,0 +1,179 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require semantic-ui/dist/semantic
+ *= require slick-carousel/slick/slick
+ *= require slick-carousel/slick/slick-theme
+ *= require_tree .
+ *= require_self
+ */
+
+/*--------------
+     Sidebar
+---------------*/
+
+.blue_bg {
+  background: #3498db !important;
+}
+
+#kietnvt .sidebar.menu .logo.image,
+#kietnvt .sticky.menu .logo.image {
+  width: 35px;
+  margin-right: 1em;
+}
+
+#kietnvt #sidebar > :last-child {
+  padding-bottom: 2em;
+}
+
+/* Incomplete Label */
+#kietnvt #sidebar .item .circular.label {
+  position: absolute;
+  top: 0.75rem;
+  right: 1em;
+  opacity: 0.2;
+  transition: background 0.3s ease;
+}
+#kietnvt #sidebar .item.active > .circular.label,
+#kietnvt #sidebar .item:hover > .circular.label {
+  opacity: 0.8;
+}
+
+/* Hidden Items */
+#kietnvt #sidebar .hide.item {
+  display: none;
+}
+
+/* Sidebar Header */
+#kietnvt #sidebar .inverted.header {
+  font-size: 1em;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5em;
+}
+#kietnvt #sidebar a.inverted.header.active,
+#kietnvt #sidebar a.inverted.header:hover {
+  color: rgba(255, 255, 255, 1);
+}
+#kietnvt #sidebar .menu .active.item {
+  color: #6DFFFF !important;
+}
+
+/*--------------
+   Fixed Menu
+---------------*/
+
+#kietnvt .main.menu .title.item b {
+  margin-right: 0.5em;
+}
+#kietnvt .fixed.main.menu .launch.item {
+  display: block;
+}
+#kietnvt .fixed.main.menu .search .icon {
+  opacity: 0.9;
+}
+
+
+/*--------------
+  Sidebar Button
+---------------*/
+
+#kietnvt .fixed.launch.button {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+
+  width: 45px;
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transition:
+    0.3s width ease,
+    0.5s transform ease
+  ;
+  -moz-transition:
+    0.3s width ease,
+    0.5s transform ease
+  ;
+  -o-transition:
+    0.3s width ease,
+    0.5s transform ease
+  ;
+  -ms-transition:
+    0.3s width ease,
+    0.5s transform ease
+  ;
+  transition:
+    0.3s width ease,
+    0.5s transform ease
+  ;
+}
+#kietnvt .launch.button .icon {
+  margin-left: 0px;
+}
+
+
+#kietnvt .fixed.launch.button .text {
+  position: absolute;
+  white-space: nowrap;
+  top: auto;
+  left: 54px;
+  opacity: 0;
+  -webkit-transition:
+    0.3s opacity 0.3s
+  ;
+  -moz-transition:
+    0.3s opacity 0.3s
+  ;
+  -o-transition:
+    0.3s opacity 0.3s
+  ;
+  -ms-transition:
+    0.3s opacity 0.3s
+  ;
+  transition:
+    0.3s opacity 0.3s
+  ;
+}
+#kietnvt .fixed.launch.button:hover {
+  width: 100px;
+}
+#kietnvt .fixed.launch.button:hover .text {
+  opacity: 1;
+}
+
+/* Position Change */
+#kietnvt.pushable.left.overlay .fixed.launch.button {
+  transform: translate3d(0, 0, 0);
+}
+#kietnvt.pushable.overlay.left.pushed .fixed.launch.button {
+  transform: translate3d(260px, 0, 0);
+}
+
+#kietnvt {
+  -ms-transition:
+    background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+    opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s
+  ;
+  -moz-transition:
+    background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+    opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s
+  ;
+  -webkit-transition:
+    background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+    opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s
+  ;
+  transition:
+    background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+    opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s
+  ;
+}

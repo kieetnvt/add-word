@@ -1,0 +1,7 @@
+- if object.errors.any?
+  %h2
+    = pluralize(object.errors.count, "error")
+    prohibited this category from being saved:
+  - object.errors.full_messages.each do |message|
+    .alert.alert-danger.alert-dismissible{:role => "alert"}
+      %strong= message

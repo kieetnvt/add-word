@@ -1,0 +1,13 @@
+.ui.inverted.vertical.masthead.center.aligned.segment
+  .ui.container
+    .ui.large.secondary.inverted.pointing.menu
+      = link_to "Home", root_path, class: "item"
+      = link_to "Manage Words", admin_words_path, class: "item"
+      = link_to "Manage User", admin_users_path, class: "item"
+      .right.item
+        - if user_signed_in?
+          = link_to "Profile", edit_user_registration_path, class: "ui inverted button"
+          = link_to "Logout", destroy_user_session_path, method: :delete, class: "ui inverted button"
+        - else
+          = link_to "Sign up", new_user_registration_path, class: "ui inverted button"
+          = link_to "Login", new_user_session_path, class: "ui inverted button"

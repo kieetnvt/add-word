@@ -1,0 +1,24 @@
+.html.ui.top.segment.attached
+  = form_for [:admin, user], html: { class: "ui form" } do |f|
+    = render partial: 'admin/shared/form_alert', locals: {object: user}
+    .field
+      = f.label :Email
+      = f.text_field :email
+    .field
+      = f.label :Password
+      = f.password_field :password
+    .field
+      = f.label :Confirmation
+      = f.password_field :password_confirmation
+    .field
+      = f.label :Current
+      = f.password_field :current_password
+    .field
+      = f.label "Roles for User"
+      = select_tag :roles, options_for_select(Role.pluck(:name)), class: "select2", multiple: true
+      = hidden_field_tag 'roled_list', user.roles.pluck(:name)
+    .field
+      = f.label "Add new role"
+      = text_field_tag :new_role
+    .field
+      = f.button class: "ui teal button"

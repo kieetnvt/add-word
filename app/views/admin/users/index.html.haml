@@ -1,0 +1,16 @@
+.row
+  = link_to "New User", new_admin_user_path, class: "ui teal button"
+  %table.ui.blue.table
+    %thead
+      %tr
+        %th Id
+        %th Email
+        %th Role
+        %th Current SIAT
+        %th Current SIIP
+        %th Last SIAT
+        %th Last SIIP
+        %th SIcount
+        %th Actions
+    %tbody
+      = render @users

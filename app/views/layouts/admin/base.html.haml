@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Admin Addword
+    = stylesheet_link_tag    'admin/admin', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'admin/admin', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .pusher
+      = render partial: "layouts/admin/shared/menu"
+      .ui.vertical.stripe.segment
+        .ui.middle.aligned.stackable.grid.container
+          = yield

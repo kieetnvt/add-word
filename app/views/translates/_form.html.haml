@@ -1,0 +1,9 @@
+= form_tag translate_path, remote: true, method: :get do
+  .ui.form
+    .fields
+      .seven.wide.field
+        = text_area_tag :translate_query, nil, rows: 2
+      .seven.wide.field
+        = text_area_tag :translate_content, nil, rows: 2
+      .field
+        = button_tag "Submit", class: "ui teal button"

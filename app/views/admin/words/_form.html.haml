@@ -1,0 +1,11 @@
+.row
+  = form_for [:admin, word] do |f|
+    = render partial: 'admin/shared/form_alert', locals: {object: word}
+    .ui.inverted.form
+      .fields
+        .field
+          = f.text_field :title, { placeholder: "Word Title"}
+        .field
+          = f.text_field :content, { placeholder: "Word Content" }
+        .field
+          = f.button class: "ui teal button"

@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    = favicon_link_tag
+    %title AddWord | Your World Words
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body#kietnvt{ class: detect_background }
+    = render partial: "layouts/shared/menu"
+    .pusher
+      = yield
